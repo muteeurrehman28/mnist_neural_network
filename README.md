@@ -110,7 +110,7 @@ mnist_neural_network/
 ## 📊 Experiment Results
 
 ### Experiment 1: Architecture [784-10], Learning Rate 0.001
-![Experiment 1](assets/Experiments_Screenshots/experiment_01.png)
+![Experiment 1](assets/experiments_screenshots/experiment_01.png)
 ```
 Epoch 1: Loss=3.37 %, Accuracy=78.85 %
 ...
@@ -118,7 +118,7 @@ Epoch 5: Loss=1.80 %, Accuracy=87.98 %
 ```
 
 ### Experiment 2: Architecture [784-64-10], Learning Rate 0.001
-![Experiment 2](assets/Experiments_Screenshots/experiment_02.png)
+![Experiment 2](assets/experiments_screenshots/experiment_02.png)
 ```
 Epoch 1: Loss=4.44 %, Accuracy=75.56 %
 ...
@@ -126,7 +126,7 @@ Epoch 5: Loss=1.91 %, Accuracy=86.94 %
 ```
 
 ### Experiment 3: Architecture [784-512-256-10], Learning Rate 0.001
-![Experiment 3](assets/Experiments_Screenshots/experiment_03.png)
+![Experiment 3](assets/experiments_screenshots/experiment_03.png)
 ```
 Epoch 1: Loss=56.13 %, Accuracy=69.12 %
 ...
@@ -134,7 +134,7 @@ Epoch 4: Loss=41.84 %, Accuracy=87.06 %
 ```
 
 ### Experiment 4: Architecture [784-256-128-64-10], Learning Rate 0.001
-![Experiment 4](assets/Experiments_Screenshots/experiment_04.png)
+![Experiment 4](assets/experiments_screenshots/experiment_04.png)
 ```
 Epoch 1: Loss=3.31 %, Accuracy=69.26 %
 ...
@@ -142,7 +142,7 @@ Epoch 5: Loss=1.96 %, Accuracy=85.17 %
 ```
 
 ### Experiment 5: Architecture [784-256-128-64-10], Learning Rate 0.1
-![Experiment 5](assets/Experiments_Screenshots/experiment_05.png)
+![Experiment 5](assets/experiments_screenshots/experiment_05.png)
 ```
 Epoch 1: Loss=2.89 %, Accuracy=80.85 %
 ...
@@ -154,8 +154,6 @@ Epoch 5: Loss=1.39 %, Accuracy=90.51 %
 ## ✅ Evaluation Results
 
 ![Confusion Matrix](assets/confusion_matrix.png)
-![Model Metrics](assets/model_evaluation_metrics.png)
-
 ```
 Accuracy: 94.56 %
 Precision (Macro): 0.9452
