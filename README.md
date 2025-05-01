@@ -153,7 +153,9 @@ Epoch 5: Loss=1.39 %, Accuracy=90.51 %
 
 ## ✅ Evaluation Results
 
-![Confusion Matrix](assets/confusion_matrix.png)
+<div style="text-align: center;">
+  <img src="assets/confusion_matrix.png" alt="Confusion Matrix" />
+</div>
 ```
 Accuracy: 94.56 %
 Precision (Macro): 0.9452
