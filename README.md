@@ -1,79 +1,98 @@
-# 🧠 MNIST Neural Network
+# MNIST Neural Network
 
-## 🚀 Installation
+This project implements a fully connected neural network from scratch to classify handwritten digits from the MNIST dataset. The implementation is written in Python and supports customizable network architectures, activation functions, loss functions, and hyperparameters. The project is designed to be modular, well-documented, and suitable for educational purposes or as a starting point for further experimentation.
 
-### 1. Clone the Repository
+---
+
+## 🧠 Project Description
+
+The MNIST Neural Network project aims to classify handwritten digits (0-9) using a custom-built neural network. The MNIST dataset, a benchmark in machine learning, contains 70,000 grayscale images (28x28 pixels) with corresponding labels. This project implements the neural network without relying on high-level frameworks like TensorFlow or PyTorch, providing insight into the mechanics of neural networks, including forward and backward propagation, weight initialization, and gradient descent.
+
+---
+
+## 🚀 Key Features
+
+- **Data Preprocessing:** Loads, normalizes, and splits the MNIST dataset into training (60,000 samples) and test (10,000 samples) sets. Includes one-hot encoding for labels and visualization of random images.
+- **Neural Network Implementation:** Supports multiple hidden layers, tanh and sigmoid activation functions for hidden layers, and softmax for the output layer. Implements Xavier weight initialization and mini-batch gradient descent.
+- **Loss Functions:** Supports `cross_entropy` (with softmax) and `mean_squared_error` loss functions.
+- **Training:** Configurable learning rates, batch sizes, epochs, and architectures. Logs training loss and accuracy per epoch.
+- **Experiments:** Run experiments with different learning rates, architectures, activation functions, and loss functions.
+- **Evaluation:** Evaluates the best model using a confusion matrix, accuracy, precision, recall, and F1-score (macro-averaged).
+- **Modularity:** Modular code for easy extension and maintenance.
+
+---
+
+## 🎯 Objectives
+
+- Demonstrate a complete neural network implementation from scratch.
+- Explore the impact of hyperparameters and architectural choices.
+- Provide a reproducible codebase for learning and experimentation.
+
+---
+
+## ⚙️ Requirements
+
+- Python 3.8 or higher
+- Dependencies:
+  - numpy>=1.21.0
+  - matplotlib>=3.4.0
+  - scikit-learn>=1.0.0
+
+---
+
+## 🔧 Installation
+
+### Clone the Repository:
 ```bash
 git clone https://github.com/yourusername/mnist_neural_network.git
 cd mnist_neural_network
 ```
 
-### 2. Create and Activate a Virtual Environment
+### Create and Activate a Virtual Environment:
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-### 3. Install Dependencies
+### Install Dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-## 🧪 Usage
-Run the main script to execute the pipeline:
+## ▶️ Usage
+
+Run the main script to execute the entire pipeline:
 ```bash
 python src/main.py
 ```
 
-### What the Script Does
-- **Loads and Preprocesses Data**: Downloads MNIST, normalizes data, splits into train/test, one-hot encodes
-- **Visualizes Data**: Saves five random images to `random_images.png`
-- **Runs Experiments** with:
-  - Learning rates: `0.1`, `0.01`, `0.001`
-  - Architectures:
-    - `[784, 256, 128, 64, 10]`
-    - `[784, 512, 256, 10]`
-    - `[784, 10]`
-    - `[784, 64, 10]`
-    - `[784, 128, 10]`
-  - Activation functions: `tanh`, `sigmoid`
-  - Loss functions: `cross_entropy`, `mse`
-- **Evaluates Performance**:
-  - Finds best configuration
-  - Prints confusion matrix, metrics, interpretation
+### Script Workflow
+- **Data Loading & Preprocessing:** MNIST dataset normalization, splitting, one-hot encoding.
+- **Image Visualization:** ![Random MNIST Images](assets/Experiments_Screenshots/random_images.png)
+- **Training & Experiments:**
+  - Learning Rates: `[0.1, 0.01, 0.001]`
+  - Architectures: `[[784, 256, 128, 64, 10], [784, 512, 256, 10], [784, 10], [784, 64, 10], [784, 128, 10]]`
+  - Activation Functions: `[tanh, sigmoid]`
+  - Loss Functions: `[cross_entropy, mse]`
+- **Evaluation:** Confusion matrix and detailed metrics.
 
 ---
 
-## 📤 Output
+## 📂 Project Structure
 
-### Console Output
-- Training loss/accuracy per epoch
-- Test accuracy for each experiment
-- Final evaluation metrics
-
-### File Output
-- `random_images.png`: Random samples with labels
-- `assets/Experiments_Screenshots/`:
-  - `experiment_01.png`, ..., `experiment_05.png`
-  - `confusion_matrix.png`
-  - `model_evaluation_metrics.png`
-
----
-
-## 📁 Project Structure
-```bash
+```
 mnist_neural_network/
 ├── assets/
-│   └── Experiments_Screenshots/
-│       ├── experiment_01.png
-│       ├── experiment_02.png
-│       ├── experiment_03.png
-│       ├── experiment_04.png
-│       ├── experiment_05.png
-│       ├── confusion_matrix.png
-│       └── model_evaluation_metrics.png
+│   ├── Experiments_Screenshots/
+│   │   ├── experiment_01.png
+│   │   ├── experiment_02.png
+│   │   ├── experiment_03.png
+│   │   ├── experiment_04.png
+│   │   ├── experiment_05.png
+│   ├── confusion_matrix.png
+│   └── model_evaluation_metrics.png
 ├── src/
 │   ├── __init__.py
 │   ├── data_preprocessing.py
@@ -90,126 +109,116 @@ mnist_neural_network/
 
 ## 📊 Experiment Results
 
-### Experiment 1: Architecture `[784-10]`, Learning Rate `0.001`
+### Experiment 1: Architecture [784-10], Learning Rate 0.001
+![Experiment 1](assets/Experiments_Screenshots/experiment_01.png)
 ```
-Epoch 1: Loss=3.3748 %, Accuracy=78.8580 %
-Epoch 2: Loss=2.8467 %, Accuracy=83.2317 %
+Epoch 1: Loss=3.37 %, Accuracy=78.85 %
 ...
+Epoch 5: Loss=1.80 %, Accuracy=87.98 %
 ```
 
-### Experiment 2: Architecture `[784-64-10]`, Learning Rate `0.001`
+### Experiment 2: Architecture [784-64-10], Learning Rate 0.001
+![Experiment 2](assets/Experiments_Screenshots/experiment_02.png)
 ```
-Epoch 1: Loss=4.4485 %, Accuracy=75.5558 %
+Epoch 1: Loss=4.44 %, Accuracy=75.56 %
 ...
+Epoch 5: Loss=1.91 %, Accuracy=86.94 %
 ```
 
-### Experiment 3: Architecture `[784-512-256-10]`, Learning Rate `0.001`
+### Experiment 3: Architecture [784-512-256-10], Learning Rate 0.001
+![Experiment 3](assets/Experiments_Screenshots/experiment_03.png)
 ```
-Epoch 1: Loss=56.1384 %, Accuracy=69.1233 %
+Epoch 1: Loss=56.13 %, Accuracy=69.12 %
 ...
+Epoch 4: Loss=41.84 %, Accuracy=87.06 %
 ```
 
-### Experiment 4: Architecture `[784-256-128-64-10]`, Learning Rate `0.001`
+### Experiment 4: Architecture [784-256-128-64-10], Learning Rate 0.001
+![Experiment 4](assets/Experiments_Screenshots/experiment_04.png)
 ```
-Epoch 1: Loss=3.3194 %, Accuracy=69.2658 %
+Epoch 1: Loss=3.31 %, Accuracy=69.26 %
 ...
+Epoch 5: Loss=1.96 %, Accuracy=85.17 %
 ```
 
-### Experiment 5: Architecture `[784-256-128-64-10]`, Learning Rate `0.1`
+### Experiment 5: Architecture [784-256-128-64-10], Learning Rate 0.1
+![Experiment 5](assets/Experiments_Screenshots/experiment_05.png)
 ```
-Epoch 1: Loss=2.8952 %, Accuracy=80.8467 %
+Epoch 1: Loss=2.89 %, Accuracy=80.85 %
 ...
+Epoch 5: Loss=1.39 %, Accuracy=90.51 %
 ```
 
 ---
 
-## 📈 Evaluation Results
+## ✅ Evaluation Results
 
-**Best Configuration:**
-- Learning Rate: `0.1`
-- Architecture: `[784, 256, 128, 64, 10]`
-- Activation: `tanh`
-- Loss: `cross_entropy`
+![Confusion Matrix](assets/confusion_matrix.png)
+![Model Metrics](assets/model_evaluation_metrics.png)
 
-**Final Metrics:**
-```yaml
-Final Train Loss: 0.0456
-Final Train Accuracy: 98.12%
-Test Accuracy: 94.56%
+```
+Accuracy: 94.56 %
+Precision (Macro): 0.9452
+Recall (Macro): 0.9448
+F1 Score (Macro): 0.9450
 ```
 
-**Confusion Matrix (sample):**
+---
+
+## 💻 Example Console Output
 ```text
-[[ 950   0   2 ... ]
- [   0 1100   5 ... ]
- ... ]
+Running Experiments...
+Experiment: LR=0.1, Arch=[784, 256, 128, 64, 10], Act=tanh, Loss=cross_entropy
+Epoch 1/10 - Loss: 0.1234 - Accuracy: 85.67 %
+...
+Best Configuration: LR=0.1, Arch=[784, 256, 128, 64, 10], Act=tanh, Loss=cross_entropy
+Final Train Accuracy: 98.12 %
+Test Accuracy: 94.56 %
 ```
-
-- Accuracy: `94.56%`
-- Precision (Macro Avg): `0.9452`
-- Recall (Macro Avg): `0.9448`
-- F1 Score (Macro Avg): `0.9450`
 
 ---
 
 ## 🤝 Contributing
+
 Contributions are welcome!
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/your-feature`
+3. Commit your changes: `git commit -m "Add your feature"`
+4. Push the branch: `git push origin feature/your-feature`
+5. Open a pull request.
 
-### Steps to Contribute
-1. Fork the repository
-2. Create a new branch:
-```bash
-git checkout -b feature/your-feature
-```
-3. Commit your changes:
-```bash
-git commit -m "Add your feature"
-```
-4. Push to your branch:
-```bash
-git push origin feature/your-feature
-```
-5. Open a Pull Request
-
-> Please follow PEP 8 standards and include documentation where needed.
+Ensure code follows **PEP 8** and includes proper documentation.
 
 ---
 
 ## ❓ FAQ
 
-### Why is the MNIST dataset downloaded automatically?
-We use `fetch_openml` from `scikit-learn`, which downloads the dataset on first use.
+- **Q:** Why is the MNIST dataset downloaded automatically?
+  **A:** The `fetch_openml` function from scikit-learn does this for convenience.
 
-### Can I modify the hyperparameters?
-Yes. Edit `main.py` to change:
-- `learning_rates`
-- `architectures`
-- `activation_functions`
-- `loss_functions`
-- `epochs`
-- `batch_size`
+- **Q:** Can I modify hyperparameters?
+  **A:** Yes. Edit `main.py` to change learning rates, architectures, functions, etc.
 
-### Why are there no test files?
-This structure is simplified for clarity. You may add a `tests/` folder with `pytest` if desired.
-
-### How can I save the trained model?
-You can modify `train.py` to save weights using `np.save`. For help, open an issue or contact the maintainer.
+- **Q:** How can I save trained models?
+  **A:** Use `np.save` in `train.py` to save weights and biases.
 
 ---
 
-## 🔗 References
+## 📚 References
+
 - [MNIST Dataset](http://yann.lecun.com/exdb/mnist/)
-- [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/) by Michael Nielsen
-- [Scikit-learn Documentation](https://scikit-learn.org/stable/)
+- [Neural Networks and Deep Learning - Michael Nielsen](http://neuralnetworksanddeeplearning.com/)
+- [Scikit-learn Docs](https://scikit-learn.org/stable/)
 
 ---
 
 ## 📄 License
-This project is licensed under the MIT License. See `LICENSE.txt` for details.
+
+This project is licensed under the **MIT License**. See the `LICENSE.txt` file for details.
 
 ---
 
 ## 📬 Contact
-For questions or suggestions:
-- Open an issue on GitHub
-- Contact: [Your Name] at [your.email@example.com]
+
+For questions or suggestions, open an issue or contact **[Your Name]** at **[muteekhan06@gmail.com]**.
+
